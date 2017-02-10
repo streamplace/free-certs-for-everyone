@@ -1,0 +1,22 @@
+{
+  "name": "free-certs-for-everyone",
+  "version": "0.0.1",
+  "description": "It gives out the letsencrypt certs to everybody!",
+  "main": "dist/fcfe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-watch src/fcfe.js",
+    "build": "babel -d --copy-files dist src"
+  },
+  "author": "Streamplace",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-preset-streamplace": "0.0.1",
+    "babel-watch": "^2.0.6"
+  },
+  "dependencies": {
+    "greenlock": "^2.1.12",
+    "le-challenge-standalone": "^2.0.0"
+  }
+}
