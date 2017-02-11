@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Free Certs for Everyone!
+name: fcfe
+version: 0.1.0

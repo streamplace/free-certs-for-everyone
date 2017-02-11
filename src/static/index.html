@@ -2,9 +2,71 @@
 <html>
 <head>
   <title>Free certs for you! ❤️</title>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0;
+    }
+    h1, h2, h3, h4, h5 {
+      font-weight: 200;
+    }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    strong {
+      font-size: 1.3em;
+    }
+    .domain, .full-domain {
+      font-weight: bold;
+      color: green;
+    }
+    .custom {
+      color: blue;
+    }
+  </style>
 </head>
 <body>
-  <h1>Free certs for you!</h1>
-  <h5>Because you deserve them.</h5>
+  <main>
+    <h1>Free certs for you!</h1>
+    <h5>Because you deserve them.</h5>
+    <p>This is a service that automatically dispenses letsencrypt SSL certs for <span class="domain">&nbsp;</span>.</p>
+    <p>
+      We use them for <a href="https://stream.place">Streamplace</a> local development, so you can work with a valid cert without
+    much hassle.</p>
+    <h3>Instructions:</h3>
+    <p><strong>
+      1. Go to <span class="full-domain">&nbsp;</span><span class="custom">your-subdomain</span>
+    </strong></p>
+    <p><strong>
+      2. Wait like 30 seconds for the cert to be issued.
+    </strong></p>
+    <p><strong>
+      3. Download and use your certs at your leisure.
+    </strong></p>
+  </main>
+  <script>
+    const protocol = window.location.protocol;
+    const port = window.location.port;
+    const hostname = window.location.hostname;
+    let fullDomain = `${protocol}//${hostname}`;
+    console.log(protocol, port);
+    if (protocol === "http:" && port !== "") {
+      fullDomain += `:${port}`;
+    }
+    else if (protocol === "https:" && port !== "") {
+      fullDomain += `:${port}`;
+    }
+    fullDomain += "/";
+    document.querySelectorAll(".domain").forEach(function(elem) {
+      elem.innerHTML = hostname;
+    });
+    document.querySelectorAll(".full-domain").forEach(function(elem) {
+      elem.innerHTML = fullDomain;
+    });
+  </script>
 </body>
 </html>

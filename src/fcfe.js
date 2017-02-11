@@ -1,8 +1,11 @@
 
 import express from "express";
 import {resolve} from "path";
+import morgan from "morgan";
 
 const app = express();
+
+app.use(morgan("combined"));
 
 const ENV = {
   DOMAIN: null,
