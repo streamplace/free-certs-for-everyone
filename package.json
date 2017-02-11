@@ -5,7 +5,7 @@
   "main": "dist/fcfe.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "PORT=8989 babel-watch src/fcfe.js",
+    "start": "PORT=8989 babel-watch -L src/fcfe.js",
     "prepublish": "babel --copy-files -d dist src"
   },
   "author": "Streamplace",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "express": "^4.14.1",
+    "fs-promise": "^1.0.0",
     "greenlock": "^2.1.12",
     "jasmine": "^2.5.3",
     "le-challenge-standalone": "^2.0.0",
